@@ -1,12 +1,7 @@
 const mongoose = require("mongoose");
 
 const placeSchema = new mongoose.Schema({
-
-    id:{
-        type: Number,
-        required: true,
-        unique: true
-    },
+    
     title:{
         type: String,
         required: true,
@@ -23,7 +18,7 @@ const placeSchema = new mongoose.Schema({
         type: Number,
         required: true,       
     },
-    imageUrl:{
+    image:{
         type: String,
         required: true,
     },
@@ -31,10 +26,10 @@ const placeSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    images: [{
+    images: {
         type: String,
         required: true,
-    }]
+    }
 
 });
 

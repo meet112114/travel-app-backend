@@ -6,15 +6,15 @@ require('../database/connection');
 const Place = require('../models/userSchema');
 
 router.post('/upload', async(req , res) => {
-    const { id , title , category, description , rating , imageUrl, location , images } = req.body; 
+    const {  title , category, description , rating , image, location , images } = req.body; 
 
-    if ( !id || !title || !category|| !description || !imageUrl || !location ) {
+    if ( !title || !category|| !description || !image || !location ) {
         return  res.status(422).json({error : `plz fill all fields properly`});
     }
     
     try{
 
-        const place = new Place({ id , title , category, description , rating , imageUrl, location , images }); 
+        const place = new Place({  title , category, description , rating , image, location , images }); 
         await  place.save();   
         res.status(201).json({ message : 'user regisered successfully'});
         console.log(place);
@@ -34,4 +34,4 @@ router.get('/getdata', async (req , res)=>{
     }
 })
 
- module.exports = router;  
+ module.exports = router;
