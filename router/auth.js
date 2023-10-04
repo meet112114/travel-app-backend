@@ -16,7 +16,7 @@ router.post('/upload', async(req , res) => {
 
         const place = new Place({  title , category, description , rating , image, location , images }); 
         await  place.save();   
-        res.status(201).json({ message : 'user regisered successfully'});
+        res.status(201).json({ message : 'place regisered successfully'});
         console.log(place);
     }catch(err){
         console.log(err);
